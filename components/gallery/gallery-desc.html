@@ -1,0 +1,22 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="gallery-desc">
+  <template>
+    <section>{{imgDesc}}</section>
+  </template>
+
+  <script>
+    Polymer({
+      is: "gallery-desc",
+      properties: {
+        imgDesc: {
+          type: String,
+          value: "gallery-desc default"
+        }
+      },
+      ready : function() {
+        console.log("Ready: gallery-title");
+      }
+    });
+  </script>
+</dom-module>

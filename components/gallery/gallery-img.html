@@ -1,0 +1,23 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="gallery-img">
+  <template>
+    <section>{{imgLoc}}</section>
+  </template>
+
+  <script>
+    Polymer({
+      is: "gallery-img",
+      properties: {
+        imgLoc: {
+          type: String,
+          value: "gallery-img default",
+          reflectToAttribute: true
+        }
+      },
+      ready : function() {
+        console.log("Ready: gallery-img");
+      }
+    });
+  </script>
+</dom-module>

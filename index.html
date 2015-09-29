@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Heather Huotari Gallery</title>
+	
+	<!-- Style Import -->
+	<link rel="stylesheet" type="text/css" href="css/pure.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    
+    <!-- Polyfill Web Components support for older browsers -->
+	<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+	<!-- Import Data -->
+	<link rel="import" href="components/data/data-house.html">
+
+	<!-- Import Environments -->
+	<link rel="import" href="components/gallery/gallery-feed.html">
+	
+</head>
+<body>
+	<data-house></data-house> <!-- This object does not neet styling -->
+	<gallery-feed></gallery-feed>
+</body>
+</html>

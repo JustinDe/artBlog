@@ -1,0 +1,22 @@
+{
+  "name": "Heathers-Blog",
+  "version": "1.0.0",
+  "authors": [
+    "Justin Demetroff <demetroffj@gmail.com>"
+  ],
+  "description": "An artist blog built on Polymer",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

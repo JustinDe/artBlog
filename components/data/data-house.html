@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="data-house">
+
+  <template>
+    <iron-ajax
+    auto
+    url="../../gallery/manifest.json"
+    params='{"alt":"json", "q":"chrome"}'
+    handle-as="json"
+    on-response="handleResponse"
+    debounce-duration="300"></iron-ajax>
+  </template>
+
+  <script>
+    Polymer({
+      is: "data-house",
+      properties: {
+        manifest : {
+          type : Object
+        }
+      },
+      handleResponse: function(request) {
+          console.log("Ready: data-house loaded manifest");
+          document.querySelector('gallery-feed').galleryJSON = request.detail.response;
+      },
+      ready : function() {
+        console.log("Ready: data-house");
+      }
+    });
+  </script>
+</dom-module>
