@@ -4,11 +4,13 @@
 
 <dom-module id="gallery-feed">
   <template>
-    <template is="dom-repeat" items="{{galleryImages}}">
-      <gallery-img imgLoc="{{item}}"></gallery-img>
-    </template>
-    <template is="dom-repeat" items="{{galleryDesc}}">
-      <gallery-desc imgDesc="{{item}}"></gallery-title>
+    <template is="dom-repeat" items="{{galleryTap}}">
+      <gallery-img imgLoc="{{item.imgLoc}}"></gallery-img>
+      <gallery-desc imgDesc="{{item.imgDesc}}"></gallery-title>
+      <!-- <span>{{item.imgLoc}}</span>
+      <br/>
+      <span>{{item.imgDesc}}</span>
+      <br/> -->
     </template>
   </template>
 
@@ -19,30 +21,20 @@
           galleryJSON : {
             observer : '_objectifyGallery'
           },
-          galleryImages : {
-            observer : '_observedGalleryImages'
-          },
-          galleryDesc : {
-            observer : '_observedGalleryDesc'
+          galleryBuilt : {
+            observer: '_observedGalleryBuilt'
           }
       },
       _objectifyGallery : function(newValue, oldValue) {
-        console.log('Observed: galleryJSON');
+        var tempArr = [];
         var galleryItms = Object.keys(newValue);
-        var tempImages = [];
-        var tempDesc = [];
         for(var i = 0; i < galleryItms.length; i++) {
-          tempImages.push(newValue[galleryItms[i]].imgLoc);
-          tempDesc.push(newValue[galleryItms[i]].imgDesc);
+          tempArr.push(newValue[galleryItms[i]]);
         }
-        this.galleryImages = tempImages;
-        this.galleryDesc = tempDesc;
+        this.galleryTap = tempArr;
       },
-      _observedGalleryImages: function(newValue, oldValue) {
-        console.log('Observed: galleryImages');
-      },
-      _observedGalleryDesc: function(newValue, oldValue) {
-        console.log('Observed: galleryDesc');
+      _observedGalleryBuilt : function(newValue, oldValue) {
+        console.log("Observed: galleryBuilt");
       },
       ready : function() {
         console.log("Ready: gallery-feed");
