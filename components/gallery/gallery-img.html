@@ -2,7 +2,7 @@
 
 <dom-module id="gallery-img">
   <template>
-    <section>{{imgLoc}}</section>
+    <a href="#"><img src="{{fullImgLoc}}"></a>
   </template>
 
   <script>
@@ -12,8 +12,15 @@
         imgLoc: {
           type: String,
           value: "gallery-img default",
-          reflectToAttribute: true
+          reflectToAttribute: true,
+          observer: "_observedImgLoc"
+        },
+        fullImgLoc : {
+          type: String
         }
+      },
+      _observedImgLoc : function(newValue,oldValue) {
+        this.fullImgLoc = "../../gallery/images/" + newValue
       },
       ready : function() {
         console.log("Ready: gallery-img");

@@ -5,12 +5,8 @@
 <dom-module id="gallery-feed">
   <template>
     <template is="dom-repeat" items="{{galleryTap}}">
-      <gallery-img imgLoc="{{item.imgLoc}}"></gallery-img>
-      <gallery-desc imgDesc="{{item.imgDesc}}"></gallery-title>
-      <!-- <span>{{item.imgLoc}}</span>
-      <br/>
-      <span>{{item.imgDesc}}</span>
-      <br/> -->
+      <gallery-img img-loc$="{{item.imgLoc}}"></gallery-img>
+      <gallery-desc img-desc$="{{item.imgDesc}}"></gallery-title>
     </template>
   </template>
 
